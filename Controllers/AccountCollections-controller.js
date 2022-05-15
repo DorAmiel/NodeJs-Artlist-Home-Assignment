@@ -1,6 +1,6 @@
 import  express  from "express";
 import generalSettings from "../config.js";
-import AccountCollectionsBl from "../Bl/AccountCollections-bl.js";
+import AccountCollectionsBl from "../Bl/accountCollections-bl.js";
 const AccountCollectionsRouter = express.Router()
 
 AccountCollectionsRouter.get(`${generalSettings.baseUrl}/AccountCollections/:accountId`, async (req, res) => {

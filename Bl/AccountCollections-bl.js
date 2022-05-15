@@ -1,4 +1,4 @@
-import AccountCollectionsDal from "../Dal/AccountCollections-dal.js"
+import AccountCollectionsDal from "../Dal/accountCollections-dal.js"
 
 const getCollectionByAccountId = async (accountId) => {
     return await AccountCollectionsDal.getCollectionByAccountId(accountId)
