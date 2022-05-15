@@ -1,0 +1,24 @@
+{
+    "name": "nodejs-artlist-home-assignment",
+    "version": "1.0.0",
+    "description": "My home assignment at nodeJs for Artlist",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon main"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DorAmiel/NodeJs-Artlist-Home-Assignment.git"
+    },
+    "type": "module",
+    "author": "Dor Amiel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DorAmiel/NodeJs-Artlist-Home-Assignment/issues"
+    },
+    "homepage": "https://github.com/DorAmiel/NodeJs-Artlist-Home-Assignment#readme",
+    "dependencies": {
+        "express": "^4.18.1",
+        "nodemon": "^2.0.16"
+    }
+}
