@@ -4,8 +4,8 @@ import accountsBl from "../Bl/accounts-bl.js";
 
 const accountsRouter = express.Router()
 
-accountsRouter.get(`${generalSettings.baseUrl}/inactiveAccounts`, async (req, res) => {
-    let result = await accountsBl.getAllInactiveAccounts();
+accountsRouter.get(`${generalSettings.baseUrl}/activeAccounts`, async (req, res) => {
+    let result = await accountsBl.getAllActiveAccounts();
 
     if (!result.success) {
         res.status(500).send(result)
@@ -13,5 +13,7 @@ accountsRouter.get(`${generalSettings.baseUrl}/inactiveAccounts`, async (req, re
         res.send(result)
     }
 })
+
+
 
 export default accountsRouter

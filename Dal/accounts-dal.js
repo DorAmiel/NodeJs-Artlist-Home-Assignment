@@ -5,11 +5,11 @@ let result = {
     data: null
 }
 
-const getAllInactiveAccounts = async () => {
+const getAllActiveAccounts = async () => {
 
     try {
         let res = await connection.promise().query(
-            'SELECT * FROM accounts WHERE isactive = 0'
+            'SELECT * FROM accounts WHERE isactive = 1'
         )
 
         result.success = true
@@ -24,5 +24,5 @@ const getAllInactiveAccounts = async () => {
 }
 
 export default {
-    getAllInactiveAccounts
+    getAllActiveAccounts
 }

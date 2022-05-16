@@ -7,11 +7,13 @@ let result = {
 }
 
 const getCollectionByAccountId = async (accountId) => {
-    
+
 
     try {
         let res = await connection.promise().query(
-            `SELECT * FROM AccountCollections WHERE accountId = ${accountId}`
+            `SELECT title, numberofsongs, AccountCollections.accountId, AccountCollections.collectionId FROM collections
+            JOIN AccountCollections ON collections.collectionId = AccountCollections.collectionId
+            WHERE AccountCollections.accountId = ${accountId};`
         )
 
         result.success = true

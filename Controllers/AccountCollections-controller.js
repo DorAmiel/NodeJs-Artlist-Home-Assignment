@@ -9,7 +9,7 @@ AccountCollectionsRouter.get(`${generalSettings.baseUrl}/AccountCollections/:acc
     if (!result.success) {
         res.status(500).send(result)
     } else {
-        res.send(result)
+        res.send(result) 
     }
 })
 

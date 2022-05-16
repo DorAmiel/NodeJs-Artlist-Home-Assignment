@@ -7,11 +7,13 @@ let result = {
 }
 
 const getSongsByCollectionId = async (collectionId) => {
-    
+
 
     try {
         let res = await connection.promise().query(
-            `SELECT * FROM collectionSongs WHERE collectionId = ${collectionId}`
+            `SELECT songName, rating, duration, collectionSongs.songId, collectionSongs.collectionId FROM songs
+            JOIN collectionSongs ON collectionSongs.songId = songs.songId
+            WHERE collectionSongs.collectionId = ${collectionId};`
         )
 
         result.success = true
@@ -28,11 +30,13 @@ const getSongsByCollectionId = async (collectionId) => {
 
 
 const getCollectionsBySongId = async (songId) => {
-    
+
 
     try {
         let res = await connection.promise().query(
-            `SELECT * FROM collectionSongs WHERE songId = ${songId}`
+            `SELECT title, numberofsongs, collectionSongs.songId, collectionSongs.collectionId FROM collections
+            JOIN collectionSongs ON collectionSongs.collectionId = collections.collectionID
+            WHERE collectionSongs.songId = ${songId};`
         )
 
         result.success = true

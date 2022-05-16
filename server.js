@@ -4,6 +4,7 @@ import AccountCollectionsRouter from './Controllers/accountCollections-controlle
 import collectionsRouter from './Controllers/collections-controller.js'
 import accountsRouter from './Controllers/accounts-controller.js'
 import collectionSongsRouter from './Controllers/collectionSongs-controller.js'
+import songsRouter from './Controllers/songs-controller.js'
 
 const app = express()
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use('/', AccountCollectionsRouter)
 app.use('/', collectionsRouter)
 app.use('/', accountsRouter)
 app.use('/', collectionSongsRouter)
+app.use('/', songsRouter)
 
-console.log(`Server is runnig on port ${generalSettings.port} `)
+console.log(`Server is runnig on port ${generalSettings.port}`)
 app.listen(generalSettings.port)
