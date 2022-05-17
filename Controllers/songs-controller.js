@@ -4,7 +4,7 @@ import songsBl from "../Bl/songs-bl.js";
 
 const songsRouter = express.Router()
 
-songsRouter.get(`${generalSettings.baseUrl}/songs/:userId`, async (req, res) => {
+songsRouter.get(`${generalSettings.baseUrl}/songsByAccountId/:userId`, async (req, res) => {
     let requestUserId = +req.params.userId
     let result = await songsBl.getAllSongsByAccountId(requestUserId);
     if (!result.success) {
@@ -21,6 +21,6 @@ songsRouter.get(`${generalSettings.baseUrl}/songsWithColletionTitle`, async (req
     } else {
         res.send(result)
     }
-}) 
+})
 
 export default songsRouter
